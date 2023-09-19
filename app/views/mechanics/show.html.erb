@@ -8,4 +8,14 @@
       <li><%= ride.name %></li>
     <% end %>
   </ul>
+
+  <h4>Add Ride To Mechanic's Workload:</h4>
+  <%= form_with(model: [@mechanic, Ride.new], url: mechanic_path(@mechanic), method: :get) do |form| %>
+    <div class="field">
+      <%= form.label :ride_id, "Ride ID:" %>
+      <%= form.text_field :ride_id %>
+    </div>
+    <%= form.submit "Submit" %>
+  <% end %>
+</section>
  
